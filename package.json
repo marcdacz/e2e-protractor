@@ -1,14 +1,17 @@
 {
-  "name": "e2e-protractor",
-  "version": "1.0.0",
-  "description": "End-to-end test automation template utilising Protractor",
-  "author": "Marc Dacanay",
-  "dependencies": {
-    "jasmine-reporters": "^2.2.1",
-    "jasmine-spec-reporter": "^4.2.1",
-    "node-fetch": "^1.7.3",
-    "protractor": "^5.1.2",
-    "selenium-webdriver": "^3.5.0",
-    "string-format": "^0.5.0"
-  }
+    "name": "e2e-protractor",
+    "version": "1.0.0",
+    "description": "End-to-end test automation template utilising Protractor",
+    "author": "Marc Dacanay",
+    "scripts": {
+        "postinstall": "node ./node_modules/protractor/node_modules/webdriver-manager update"
+    },
+    "dependencies": {
+        "jasmine-reporters": "^2.2.1",
+        "jasmine-spec-reporter": "^4.2.1",
+        "node-fetch": "^1.7.3",
+        "protractor": "^5.1.2",
+        "selenium-webdriver": "^3.5.0",
+        "string-format": "^0.5.0"
+    }
 }
