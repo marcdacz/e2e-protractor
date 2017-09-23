@@ -3,6 +3,10 @@
     "version": "1.0.0",
     "description": "End-to-end test automation template utilising Protractor",
     "author": "Marc Dacanay",
+    "repository": {
+        "url": "https://github.com/marcdacz/e2e-protractor-node"
+    },
+    "license": "MIT",
     "scripts": {
         "postinstall": "node ./node_modules/protractor/node_modules/webdriver-manager update"
     },
