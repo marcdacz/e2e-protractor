@@ -24,7 +24,7 @@ $ protractor runLocal.js
 1. config
     - contains the protractor configurations which you can call from the vscode launch options I mentioned above.
 2. data
-    - contains json files such as `testSettings.json` where you can write specific.
+    - contains json files such as `testSettings.json` where you can write specific settings for the tests.
 3. pages
     - contains the page object models for pages, userflows or common components (ie. `calculatorPage.js`, `loginUserflow.js` or `navbarComponent.js`).
 4. specs
