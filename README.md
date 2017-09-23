@@ -3,6 +3,12 @@ End-to-end test automation template utilising Protractor
 
 [![protractor logo](http://www.protractortest.org/img/protractor-logo-450.png)](http://www.protractortest.org/#/)
 
+### Features:
+- Page Object Model 
+- Test Reporting
+- Several Utilities and Helper Functions
+- VSCode Debugging
+
 ### Installation:
 Install node.js then:
 ```sh
