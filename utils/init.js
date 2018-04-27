@@ -23,9 +23,7 @@ let disableCssAnimate = () => {
         });
 };
 
-let initialiseGlobalVariables = () => {
-    global.testConfig = require('../data/testSettings.json');
-    global.webUrl = testConfig.webUrl;
+let initialiseGlobalVariables = () => {  
     global.helpers = require('../utils/helpers.js');
     global.format = require('string-format');
     global.isAngularSite = function(flag) {

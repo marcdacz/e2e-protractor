@@ -14,28 +14,34 @@ Install node.js then:
 ```sh
 $ cd e2e-protractor-node
 $ npm install
+$ npm run webdriver-update
 ```
 
 ### Execution:
+CLI:
+1. To Run Chrome Direct
+```
+$ npm run test
+```
+2. To Run Chrome and Firefox in Parallel
+Note: Make sure to install Java JDK
+```
+$ npm run webdriver-start
+$ npm run chrome-firefox
+```
+
+VSCode Launch:
 I have included a launch option for vscode following this [guide](https://blogs.msdn.microsoft.com/wushuai/2016/08/24/debug-protractor-script-in-visual-studio-code/) which will allow you to select it and hit F5 to execute and debug the tests.
 ![vscode debug](https://msdnshared.blob.core.windows.net/media/2016/08/vscode2-1024x460.png)
-
-To run manually from the terminal:
-```sh
-$ cd .\e2e-protractor-node\config
-$ protractor runLocal.js
-```
 
 ### Folder Structure:
 1. config
     - contains the protractor configurations which you can call from the vscode launch options I mentioned above.
-2. data
-    - contains json files such as `testSettings.json` where you can write specific settings for the tests.
-3. pages
+2. pages
     - contains the page object models for pages, userflows or common components (ie. `calculatorPage.js`, `loginUserflow.js` or `navbarComponent.js`).
-4. specs
+3. specs
     - contains the test specs; I recommend placing them in subfolders for better organisation and navigation
-5. utils
+4. utils
     - contains helper functions that can be used all throughout the framework 
 
 ### ToDos:

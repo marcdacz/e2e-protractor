@@ -8,7 +8,12 @@
     },
     "license": "MIT",
     "scripts": {
-        "postinstall": "node ./node_modules/protractor/node_modules/webdriver-manager update"
+        "webdriver-update": "node ./node_modules/protractor/bin/webdriver-manager update",
+        "webdriver-update-ie": "node ./node_modules/protractor/bin/webdriver-manager update --ie",
+        "webdriver-start": "node ./node_modules/protractor/bin/webdriver-manager start",
+        "protractor": "node ./node_modules/protractor/bin/protractor",
+        "chrome": "protractor ./config/runLocalChrome.js",
+        "chrome-firefox": "protractor ./config/runLocalChromeAndFirefox.js"
     },
     "dependencies": {
         "jasmine-reporters": "^2.2.1",
