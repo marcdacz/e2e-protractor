@@ -21,7 +21,7 @@ $ npm run webdriver-update
 CLI:
 1. To Run Chrome Direct
 ```
-$ npm run test
+$ npm run chrome
 ```
 2. To Run Chrome and Firefox in Parallel
 Note: Make sure to install Java JDK
@@ -31,6 +31,7 @@ $ npm run chrome-firefox
 ```
 
 VSCode Launch:
+
 I have included a launch option for vscode following this [guide](https://blogs.msdn.microsoft.com/wushuai/2016/08/24/debug-protractor-script-in-visual-studio-code/) which will allow you to select it and hit F5 to execute and debug the tests.
 ![vscode debug](https://msdnshared.blob.core.windows.net/media/2016/08/vscode2-1024x460.png)
 
