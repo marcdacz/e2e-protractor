@@ -35,6 +35,23 @@ VSCode Launch:
 I have included a launch option for vscode following this [guide](https://blogs.msdn.microsoft.com/wushuai/2016/08/24/debug-protractor-script-in-visual-studio-code/) which will allow you to select it and hit F5 to execute and debug the tests.
 ![vscode debug](https://msdnshared.blob.core.windows.net/media/2016/08/vscode2-1024x460.png)
 
+### Test Reporting:
+Using jasmine-allure-reporter and allure-commandline
+1. To cleanup existing results before testing:
+```
+$ npm run pretest
+```
+
+2. To create report after a test:
+```
+$ npm run postest
+```
+
+3. To open the report:
+```
+$ npm run open-report
+```
+
 ### Folder Structure:
 1. config
     - contains the protractor configurations which you can call from the vscode launch options I mentioned above.

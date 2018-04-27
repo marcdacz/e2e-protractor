@@ -1,26 +1,31 @@
 {
-    "name": "e2e-protractor",
-    "version": "1.0.0",
-    "description": "End-to-end test automation template utilising Protractor",
-    "author": "Marc Dacanay",
-    "repository": {
-        "url": "https://github.com/marcdacz/e2e-protractor-node"
-    },
-    "license": "MIT",
-    "scripts": {
-        "webdriver-update": "node ./node_modules/protractor/bin/webdriver-manager update",
-        "webdriver-update-ie": "node ./node_modules/protractor/bin/webdriver-manager update --ie",
-        "webdriver-start": "node ./node_modules/protractor/bin/webdriver-manager start",
-        "protractor": "node ./node_modules/protractor/bin/protractor",
-        "chrome": "protractor ./config/runLocalChrome.js",
-        "chrome-firefox": "protractor ./config/runLocalChromeAndFirefox.js"
-    },
-    "dependencies": {
-        "jasmine-reporters": "^2.2.1",
-        "jasmine-spec-reporter": "^4.2.1",
-        "node-fetch": "^1.7.3",
-        "protractor": "^5.1.2",
-        "selenium-webdriver": "^3.5.0",
-        "string-format": "^0.5.0"
-    }
+  "name": "e2e-protractor",
+  "version": "1.0.0",
+  "description": "End-to-end test automation template utilising Protractor",
+  "author": "Marc Dacanay",
+  "repository": {
+    "url": "https://github.com/marcdacz/e2e-protractor-node"
+  },
+  "license": "MIT",
+  "scripts": {
+    "pretest": "rm -rf allure-report",
+    "posttest": "allure generate allure-results --clean -o allure-report || true",
+    "open-report": "allure open allure-report",
+    "webdriver-update": "node ./node_modules/protractor/bin/webdriver-manager update",
+    "webdriver-update-ie": "node ./node_modules/protractor/bin/webdriver-manager update --ie",
+    "webdriver-start": "node ./node_modules/protractor/bin/webdriver-manager start",
+    "protractor": "node ./node_modules/protractor/bin/protractor",
+    "chrome": "protractor ./config/runLocalChrome.js",
+    "chrome-firefox": "protractor ./config/runLocalChromeAndFirefox.js"
+  },
+  "dependencies": {
+    "allure-commandline": "^2.5.0",
+    "jasmine-allure-reporter": "^1.0.2",
+    "jasmine-reporters": "^2.2.1",
+    "jasmine-spec-reporter": "^4.2.1",
+    "node-fetch": "^1.7.3",
+    "protractor": "^5.1.2",
+    "selenium-webdriver": "^3.5.0",
+    "string-format": "^0.5.0"
+  }
 }
