@@ -65,6 +65,7 @@ let baseConfig = {
 		var AllureReporter = require('jasmine-allure-reporter');
 		jasmine.getEnv().addReporter(new AllureReporter({ resultsDir: 'allure-results' }));
 		jasmine.getEnv().afterEach((done) => {
+			allure.addArgument('Environment', 'Production');
 			if (testCaseResult.failedExpectations.length) {
 				browser.takeScreenshot().then((png) => {
 					allure.createAttachment('Screenshot', () => {
