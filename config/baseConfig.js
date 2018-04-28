@@ -46,6 +46,7 @@ let baseConfig = {
 		const testInitialiser = require('../utils/init.js');
 		testInitialiser.initialiseGlobalVariables();
 		testInitialiser.disableAnimation();
+		testInitialiser.updateEnvironmentProperties();
 
 		const jasmineReporters = require('jasmine-reporters');
 		jasmine.getEnv().addReporter(new jasmineReporters.NUnitXmlReporter({ filename: `e2e-testresults_${helpers.getTimestamp()}.xml` }));
@@ -64,8 +65,7 @@ let baseConfig = {
 
 		var AllureReporter = require('jasmine-allure-reporter');
 		jasmine.getEnv().addReporter(new AllureReporter({ resultsDir: 'allure-results' }));
-		jasmine.getEnv().afterEach((done) => {
-			allure.addArgument('Environment', 'Production');
+		jasmine.getEnv().afterEach((done) => {			
 			if (testCaseResult.failedExpectations.length) {
 				browser.takeScreenshot().then((png) => {
 					allure.createAttachment('Screenshot', () => {

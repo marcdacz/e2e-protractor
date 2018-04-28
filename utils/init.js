@@ -23,7 +23,7 @@ let disableCssAnimate = () => {
         });
 };
 
-let initialiseGlobalVariables = () => {  
+let initialiseGlobalVariables = () => {
     global.helpers = require('../utils/helpers.js');
     global.format = require('string-format');
     global.isAngularSite = function(flag) {
@@ -35,13 +35,26 @@ let initialiseGlobalVariables = () => {
     global.defaultWait = 10000;
 };
 
-let disableAnimation = () => {        
+let disableAnimation = () => {
     browser.addMockModule('disableNgAnimate', disableNgAnimate);
     browser.addMockModule('disableCssAnimate', disableCssAnimate);
 };
 
+let updateEnvironmentProperties = () => {
+    const parser = require("properties-file");
+    const properties = parser.stringify({
+        Browser: "Chrome",
+        BrowserVersion: "63.0",
+        Environment: "Production",
+        WebVersion: "1.0.4"
+    });
+    const fs = require('fs');
+    fs.writeFileSync("allure-results/environment.properties", properties);
+};
+
 module.exports = {
     initialiseGlobalVariables,
-    disableAnimation
+    disableAnimation,
+    updateEnvironmentProperties
 };
 
