@@ -8,8 +8,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "pretest": "rm -rf allure-report",
-    "posttest": "allure generate allure-results --clean -o allure-report || true",
+    "gen-report": "allure generate allure-results --clean -o allure-report || true",
     "open-report": "allure open allure-report",
     "webdriver-update": "node ./node_modules/protractor/bin/webdriver-manager update",
     "webdriver-update-ie": "node ./node_modules/protractor/bin/webdriver-manager update --ie",

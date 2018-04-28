@@ -37,17 +37,12 @@ I have included a launch option for vscode following this [guide](https://blogs.
 
 ### Test Reporting:
 Using jasmine-allure-reporter and allure-commandline
-1. To cleanup existing results before testing:
+1. To create report after a test:
 ```
-$ npm run pretest
-```
-
-2. To create report after a test:
-```
-$ npm run postest
+$ npm run gen-report
 ```
 
-3. To open the report:
+2. To open the report:
 ```
 $ npm run open-report
 ```
@@ -64,7 +59,7 @@ $ npm run open-report
 
 ### ToDos:
 - Play around with async/await to make asynchronous tests be more readable
-- Add screenshots/video for failed tests
+- ~~Add screenshots/video for failed tests~~ Done adding screenshot for failed test
 
 
 

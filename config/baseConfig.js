@@ -53,19 +53,29 @@ let baseConfig = {
 		const SpecReporter = require('jasmine-spec-reporter').SpecReporter;
 		jasmine.getEnv().addReporter(new SpecReporter({ displayStacktrace: 'all' }));
 
-		var AllureReporter = require('jasmine-allure-reporter');
-		jasmine.getEnv().addReporter(new AllureReporter({
-			resultsDir: 'allure-results'
-		}));
+		jasmine.getEnv().addReporter({
+			specStarted(result) {
+				global.testCaseResult = result;
+			},
+			specDone() {
+				global.testCaseResult = null;
+			}
+		});
 
-		jasmine.getEnv().afterEach(function(done){
-			browser.takeScreenshot().then(function (png) {
-			  allure.createAttachment('Screenshot', function () {
-				return new Buffer(png, 'base64')
-			  }, 'image/png')();
-			  done();
-			})
-		  });
+		var AllureReporter = require('jasmine-allure-reporter');
+		jasmine.getEnv().addReporter(new AllureReporter({ resultsDir: 'allure-results' }));
+		jasmine.getEnv().afterEach((done) => {
+			if (testCaseResult.failedExpectations.length) {
+				browser.takeScreenshot().then((png) => {
+					allure.createAttachment('Screenshot', () => {
+						return new Buffer(png, 'base64')
+					}, 'image/png')();
+					done();
+				});
+			} else {
+				done();
+			}
+		});
 	},
 	onComplete: function() {
 		cleanup();
