@@ -3,7 +3,7 @@ describe('validating angular calculator', () => {
 
     beforeAll(() => {
         isAngularSite(true);
-        browser.get(browser.params.baseUrl);
+        browser.get(browser.params.calcUrl);
     });
 
     it('should display the title', () => {

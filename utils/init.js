@@ -27,7 +27,7 @@ let initialiseGlobalVariables = () => {
     global.helpers = require('../utils/helpers.js');
     global.format = require('string-format');
     global.isAngularSite = function(flag) {
-        browser.ignoreSynchronization = !flag;
+        browser.waitForAngularEnabled(flag);
         global.implicitTimeoutInMs = flag ? 10000 : 30000;
         browser.driver.manage().timeouts().implicitlyWait(implicitTimeoutInMs);
     };

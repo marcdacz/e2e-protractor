@@ -14,7 +14,8 @@ const cleanup = () => {
 
 let baseConfig = {
 	params: {
-		baseUrl: 'http://juliemr.github.io/protractor-demo/'
+		calcUrl: 'http://juliemr.github.io/protractor-demo/',
+		rmaUrl: 'https://www.ratemyagent.com.au/'
 	},
 	directConnect: true,
 	capabilities: {

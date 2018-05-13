@@ -59,3 +59,5 @@ typings/
 
 e2e-testresults.xml
 /allure*/
+
+\.vscode/settings\.json
